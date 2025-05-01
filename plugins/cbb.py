@@ -42,8 +42,17 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text=START_MSG.format(first=query.from_user.first_name),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
-                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')]
+                [
+                    InlineKeyboardButton("Mᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Cultured_Weekends"),
+                    InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Weekends_Feedback_bot")
+                ],
+                [
+                    InlineKeyboardButton("Mᴏʀᴇ ᴄʜᴀɴɴᴇʟs", url="https://t.me/Cultured_Weekends")
+                ],
+                [
+                    InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="about"),
+                    InlineKeyboardButton("Hᴇʟᴘ", callback_data="help")
+                ]
             ])
         )
 
