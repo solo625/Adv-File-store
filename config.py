@@ -42,7 +42,7 @@ ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/cosmic
 #--------------------------------------------
 #--------------------------------------------
 START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</blockquote>\n<blockquote expandable>Lᴏᴠᴇ ʜᴇɴᴛᴀɪ & ᴊᴀᴠ? ɪ’ᴍ ʜᴇʀᴇ ᴛᴏ sᴀᴛɪsғʏ ʏᴏᴜʀ ᴅᴇᴇᴘᴇsᴛ ᴅᴇsɪʀᴇs  ʙᴏᴅʏ, ᴍɪɴᴅ, & ғᴀɴᴛᴀsʏ. ɴᴏ ғɪʟᴛᴇʀs. ɴᴏ ʟɪᴍɪᴛs. ᴊᴜsᴛ ᴘᴀssɪᴏɴ, ᴄᴏɴɴᴇᴄᴛɪᴏɴ, ᴀɴᴅ ᴘᴜʀᴇ ᴇsᴄᴀᴘᴇ.ᴛᴀᴘ ɪɴ… ᴀɴᴅ ʟᴇᴛ ᴛʜᴇ ᴘʟᴇᴀsᴜʀᴇ ᴜɴғᴏʟᴅ.ɪɴᴛɪᴍᴀᴛᴇ ᴍᴏᴍᴇɴᴛs. ᴇxᴄʟᴜsɪᴠᴇ ᴄᴏɴᴛᴇɴᴛ. ᴍᴀᴅᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ.ᴄᴏᴍᴇ ᴄʟᴏsᴇʀ  ʟᴇᴛ’s ᴍᴀᴋᴇ ɪᴛ ᴘᴇʀsᴏɴᴀʟ.</blockquote></b>")
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</b></blockquote>\n\<b>ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</b></blockquote>\n<b>ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs</b>")
 
 CMD_TXT = """<blockquote><b>» 𝗔𝗗𝗠𝗜𝗡𝗦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗</b></blockquote>
 <b><blockquote expandable>›› /dlt_time :</b> sᴇᴛ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛɪᴍᴇ
