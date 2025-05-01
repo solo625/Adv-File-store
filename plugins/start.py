@@ -17,6 +17,9 @@ from config import *
 from helper_func import *
 from database.database import *
 from database.db_premium import *
+from pyrogram.enums import ChatAction
+import random
+
 
 
 BAN_SUPPORT = f"{BAN_SUPPORT}"
@@ -50,8 +53,24 @@ async def short_url(client: Client, message: Message, base64_string):
 @Bot.on_message(filters.command('start') & filters.private)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
-    id = message.from_user.id
-    is_premium = await is_premium_user(id)
+    is_premium = await is_premium_user(user_id)
+
+    welcome_text = "<i><blockquote>Wᴇʟᴄᴏᴍᴇ, ʙᴀʙʏ… ɪ’ᴠᴇ ʙᴇᴇɴ ᴄʀᴀᴠɪɴɢ ʏᴏᴜʀ ᴘʀᴇsᴇɴᴄᴇ ғᴇᴇʟs ᴘᴇʀғᴇᴄᴛ ɴᴏᴡ ᴛʜᴀᴛ ʏᴏᴜ’ʀᴇ ʜᴇʀᴇ.</blockquote></i>"
+
+    stickers = [
+        "CAACAgUAAxkBAAEOXBhoCoKZ76jevKX-Vc5v5SZhCeQAAXMAAh4KAALJrhlVZygbxFWWTLw2BA"
+    ]
+
+    await client.send_chat_action(message.chat.id, ChatAction.TYPING)
+    msg = await message.reply_text(welcome_text, parse_mode="html")
+    await asyncio.sleep(0.5)
+
+    await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode="html")
+    await asyncio.sleep(0.5)
+    await msg.delete()
+
+    await client.send_chat_action(message.chat.id, ChatAction.CHOOSE_STICKER)
+    await message.reply_sticker(random.choice(stickers))
 
     # Check if user is banned
     banned_users = await db.get_ban_users()
