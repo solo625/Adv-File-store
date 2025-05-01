@@ -65,7 +65,7 @@ async def start_command(client: Client, message: Message):
     msg = await message.reply_text(welcome_text, parse_mode="html")
     await asyncio.sleep(0.5)
 
-    await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode="html")
+    await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode=ParseMode.HTML)
     await asyncio.sleep(0.5)
     await msg.delete()
 
@@ -345,7 +345,7 @@ async def check_plan(client: Client, message: Message):
     status_message = await check_user_plan(user_id)
 
     # Image to send
-    image_url = "https://example.com/your_image.jpg"  # Replace with the actual image URL you want to use
+    image_url = "https://i.ibb.co/MxyCLGBf/photo-2025-01-16-11-21-46-7499433590862643216.jpg"  # Replace with the actual image URL you want to use
     
     # URL you want the user to visit for more information or terms
     url = "https://example.com/terms"  # Replace with the actual URL
