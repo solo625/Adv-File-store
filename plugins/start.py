@@ -193,11 +193,11 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup([
             [
-                InlineKeyboardButton("Mᴀɪɴ ᴄʜᴀɴɴᴇʟ", callback_data="btn1"),
-                InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", callback_data="btn2")
+                InlineKeyboardButton("Mᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Cultured_Weekends"),
+                InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Weekends_Feedback_bot")
             ],
             [
-                InlineKeyboardButton("Mᴏʀᴇ ᴄʜᴀɴɴᴇʟs", url="https://t.me/Nova_Flix/50")
+                InlineKeyboardButton("Mᴏʀᴇ ᴄʜᴀɴɴᴇʟs", url="https://t.me/Cultured_Weekends")
             ],
             [
                 InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="about"),
