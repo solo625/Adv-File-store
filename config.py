@@ -41,8 +41,8 @@ HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏ�
 ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/cosmic_freak>Yato</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/otakuflix_network>ᴏᴛᴀᴋᴜғʟɪx ɴᴇᴛᴡᴏʀᴋ</a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/anime_cruise_netflix>ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ</a>\n◈ sᴇʀɪᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/webseries_flix>ᴡᴇʙsᴇʀɪᴇs ғʟɪx</a>\n◈ ᴀᴅᴜʟᴛ ᴍᴀɴʜᴡᴀ : <a href=https://t.me/pornhwa_flix>ᴘᴏʀɴʜᴡᴀs</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/cosmic_freak>subaru</a></blockquote></b>"
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x<blockquote>\n<blockquote>Lᴏᴠᴇ ʜᴇɴᴛᴀɪ & ᴊᴀᴠ? ɪ ᴀᴍ ᴍᴀᴅᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ғɪɴᴅ ᴡʜᴀᴛ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ.</blockquote></b>")
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</b></blockquote>\n\n<b>ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</blockquote>\n<blockquote expandable>Lᴏᴠᴇ ʜᴇɴᴛᴀɪ & ᴊᴀᴠ? ɪ’ᴍ ʜᴇʀᴇ ᴛᴏ sᴀᴛɪsғʏ ʏᴏᴜʀ ᴅᴇᴇᴘᴇsᴛ ᴅᴇsɪʀᴇs  ʙᴏᴅʏ, ᴍɪɴᴅ, & ғᴀɴᴛᴀsʏ. ɴᴏ ғɪʟᴛᴇʀs. ɴᴏ ʟɪᴍɪᴛs. ᴊᴜsᴛ ᴘᴀssɪᴏɴ, ᴄᴏɴɴᴇᴄᴛɪᴏɴ, ᴀɴᴅ ᴘᴜʀᴇ ᴇsᴄᴀᴘᴇ.ᴛᴀᴘ ɪɴ… ᴀɴᴅ ʟᴇᴛ ᴛʜᴇ ᴘʟᴇᴀsᴜʀᴇ ᴜɴғᴏʟᴅ.ɪɴᴛɪᴍᴀᴛᴇ ᴍᴏᴍᴇɴᴛs. ᴇxᴄʟᴜsɪᴠᴇ ᴄᴏɴᴛᴇɴᴛ. ᴍᴀᴅᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ.ᴄᴏᴍᴇ ᴄʟᴏsᴇʀ  ʟᴇᴛ’s ᴍᴀᴋᴇ ɪᴛ ᴘᴇʀsᴏɴᴀʟ.</blockquote></b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ {first} x</b></blockquote>\n\<b>ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs</b>")
 
 CMD_TXT = """<blockquote><b>» 𝗔𝗗𝗠𝗜𝗡𝗦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗</b></blockquote>
 <b><blockquote expandable>›› /dlt_time :</b> sᴇᴛ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛɪᴍᴇ
