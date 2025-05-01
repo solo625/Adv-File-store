@@ -12,15 +12,19 @@ from bot import Bot
 from config import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from database.database import *
+from pyrogram.types import InputMediaPhoto
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
 
     if data == "help":
-        await query.message.edit_text(
-            text=HELP_TXT.format(first=query.from_user.first_name),
-            disable_web_page_preview=True,
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=HELP_IMG_URL,
+                caption=HELP_TXT.format(first=query.from_user.first_name),
+                parse_mode="html"
+            ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
                  InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
@@ -28,9 +32,12 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         )
 
     elif data == "about":
-        await query.message.edit_text(
-            text=ABOUT_TXT.format(first=query.from_user.first_name),
-            disable_web_page_preview=True,
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=ABOUT_IMG_URL,
+                caption=ABOUT_TXT.format(first=query.from_user.first_name),
+                parse_mode="html"
+            ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
                  InlineKeyboardButton('ᴄʟᴏꜱᴇ', callback_data='close')]
@@ -38,9 +45,12 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         )
 
     elif data == "start":
-        await query.message.edit_text(
-            text=START_MSG.format(first=query.from_user.first_name),
-            disable_web_page_preview=True,
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=HOME_IMG_URL,
+                caption=START_MSG.format(first=query.from_user.first_name),
+                parse_mode="html"
+            ),
             reply_markup=InlineKeyboardMarkup([
                 [
                     InlineKeyboardButton("Mᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Cultured_Weekends"),
