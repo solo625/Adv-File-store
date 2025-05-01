@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-
 from pyrogram import Client 
 from bot import Bot
 from config import *
@@ -21,7 +12,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "help":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=HELP_IMG_URL,
+                media="https://i.ibb.co/6JWDXWbc/photo-2025-05-01-10-38-04-7499424743230013456.jpg",
                 caption=HELP_TXT.format(first=query.from_user.first_name),
                 parse_mode="html"
             ),
@@ -34,7 +25,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "about":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=ABOUT_IMG_URL,
+                media="https://i.ibb.co/TD6V1bP0/photo-2025-05-01-10-38-06-7499424756114915352.jpg",
                 caption=ABOUT_TXT.format(first=query.from_user.first_name),
                 parse_mode="html"
             ),
@@ -47,7 +38,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "start":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=HOME_IMG_URL,
+                media="https://i.ibb.co/SDL1s3bc/photo-2025-05-01-08-54-41-7499398097252909060.jpg",
                 caption=START_MSG.format(first=query.from_user.first_name),
                 parse_mode="html"
             ),
