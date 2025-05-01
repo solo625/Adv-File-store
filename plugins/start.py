@@ -251,7 +251,7 @@ async def start_command(client: Client, message: Message):
 chat_data_cache = {}
 
 async def not_joined(client: Client, message: Message):
-    temp = await message.reply("<b><i>Checking Subscription...</i></b>")
+    temp = await message.reply("<b><i><pre>Cʜᴇᴄᴋɪɴɢ sᴜʙsᴄʀɪᴘᴛɪᴏɴ...</pre></i></b>")
 
     user_id = message.from_user.id
     buttons = []
