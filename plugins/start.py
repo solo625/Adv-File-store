@@ -317,11 +317,36 @@ async def not_joined(client: Client, message: Message):
 async def check_plan(client: Client, message: Message):
     user_id = message.from_user.id  # Get user ID from the message
 
-    # Get the premium status of the user
+    # Get the premium status of the user (You can replace this with your actual logic)
     status_message = await check_user_plan(user_id)
 
-    # Send the response message to the user
-    await message.reply(status_message)
+    # Image to send
+    image_url = "https://example.com/your_image.jpg"  # Replace with the actual image URL you want to use
+    
+    # URL you want the user to visit for more information or terms
+    url = "https://example.com/terms"  # Replace with the actual URL
+
+    # Keyboard layout with buttons: "Close" and a URL button
+    keyboard = InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("Close", callback_data="close")],  # Close button
+            [InlineKeyboardButton("More Info", url=url)]  # URL button
+        ]
+    )
+
+    # Send the message with the image, status message, and keyboard
+    await message.reply_photo(
+        photo=image_url,  # Image URL
+        caption=f"Your Plan Status:\n\n{status_message}",  # Status message content
+        reply_markup=keyboard  # Attach the keyboard with the buttons
+    )
+
+# Callback for handling the Close button (delete the message when clicked)
+@Bot.on_callback_query()
+async def on_callback_query(client, callback_query):
+    if callback_query.data == "close":
+        # Delete the message when the Close button is clicked
+        await callback_query.message.delete()
 
 #=====================================================================================##
 # Command to add premium user
@@ -355,7 +380,7 @@ async def add_premium_user_command(client, msg):
         # Notify the admin with an image and a close button
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Close", callback_data="close")]
+                [InlineKeyboardButton("Close", callback_data="close2")]
             ]
         )
         await msg.reply_photo(
@@ -383,7 +408,7 @@ async def add_premium_user_command(client, msg):
 
 @Bot.on_callback_query()
 async def on_callback_query(client, callback_query):
-    if callback_query.data == "close":
+    if callback_query.data == "close2":
         # Close the message by deleting it
         await callback_query.message.delete()
         
