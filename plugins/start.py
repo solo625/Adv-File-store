@@ -340,40 +340,61 @@ async def not_joined(client: Client, message: Message):
 
 #=====================================================================================##
 
-@Bot.on_message(filters.command('myplan') & filters.private)
+@Client.on_message(filters.command('myplan') & filters.private)
 async def check_plan(client: Client, message: Message):
-    user_id = message.from_user.id  # Get user ID from the message
+    user = message.from_user
+    user_id = user.id
+    name = user.first_name
+    username = f"@{user.username}" if user.username else "N/A"
 
-    # Get the premium status of the user (You can replace this with your actual logic)
+    # Welcome message and animation
+    welcome_text = (
+        "<i><blockquote>"
+        "Wᴇʟᴄᴏᴍᴇ, ʙᴀʙʏ… ɪ’ᴠᴇ ʙᴇᴇɴ ᴄʀᴀᴠɪɴɢ ʏᴏᴜʀ ᴘʀᴇsᴇɴᴄᴇ ғᴇᴇʟs ᴘᴇʀғᴇᴄᴛ ɴᴏᴡ ᴛʜᴀᴛ ʏᴏᴜ’ʀᴇ ʜᴇʀᴇ."
+        "</blockquote></i>"
+    )
+    stickers = [
+        "CAACAgUAAxkBAAEOXBhoCoKZ76jevKX-Vc5v5SZhCeQAAXMAAh4KAALJrhlVZygbxFWWTLw2BA"
+    ]
+
+    await client.send_chat_action(message.chat.id, ChatAction.TYPING)
+    msg = await message.reply_text(welcome_text, parse_mode=ParseMode.HTML)
+    await asyncio.sleep(0.5)
+
+    await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode=ParseMode.HTML)
+    await asyncio.sleep(0.5)
+    await msg.delete()
+
+    await client.send_chat_action(message.chat.id, ChatAction.CHOOSE_STICKER)
+    await message.reply_sticker(random.choice(stickers))
+
+    # Now fetch the user plan status
     status_message = await check_user_plan(user_id)
 
-    # Image to send
-    image_url = "https://i.ibb.co/MxyCLGBf/photo-2025-01-16-11-21-46-7499433590862643216.jpg"  # Replace with the actual image URL you want to use
-    
-    # URL you want the user to visit for more information or terms
-    url = "https://example.com/terms"  # Replace with the actual URL
+    image_url = "https://i.ibb.co/MxyCLGBf/photo-2025-01-16-11-21-46-7499433590862643216.jpg"
+    url = "https://example.com/terms"
 
-    # Keyboard layout with buttons: "Close" and a URL button
     keyboard = InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("Close", callback_data="close")],  # Close button
-            [InlineKeyboardButton("More Info", url=url)]  # URL button
-        ]
+        [[
+            InlineKeyboardButton("Close", callback_data="close"),
+            InlineKeyboardButton("More Info", url=url)
+        ]]
     )
 
-    # Send the message with the image, status message, and keyboard
+    caption = (
+        f"<b>Your Plan Details:</b>\n\n"
+        f"<b>Name:</b> {name}\n"
+        f"<b>Username:</b> {username}\n"
+        f"<b>User ID:</b> <code>{user_id}</code>\n\n"
+        f"<b>Status:</b>\n{status_message}"
+    )
+
     await message.reply_photo(
-        photo=image_url,  # Image URL
-        caption=f"Your Plan Status:\n\n{status_message}",  # Status message content
-        reply_markup=keyboard  # Attach the keyboard with the buttons
+        photo=image_url,
+        caption=caption,
+        reply_markup=keyboard,
+        parse_mode=ParseMode.HTML
     )
-
-# Callback for handling the Close button (delete the message when clicked)
-@Bot.on_callback_query()
-async def on_callback_query(client, callback_query):
-    if callback_query.data == "close":
-        # Delete the message when the Close button is clicked
-        await callback_query.message.delete()
 
 #=====================================================================================##
 # Command to add premium user
