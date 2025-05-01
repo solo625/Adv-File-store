@@ -80,7 +80,7 @@ USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘ
 OWNER_TAG = os.environ.get("OWNER_TAG", "Weekends_Feedback_bot")
 UPI_ID = os.environ.get("UPI_ID", "Weekends_Feedback_bot")
 QR_PIC = os.environ.get("QR_PIC", "https://i.ibb.co/21yW232g/photo-2025-05-01-09-28-01-7499406687187501064.jpg")
-SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/Weekends_Feedback_bot")
+SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"https://t.me/+FRmXFSlecDI5NGJl")
 #--------------------------------------------
 #Time and its price
 #7 Days
