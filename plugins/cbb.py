@@ -14,7 +14,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             media=InputMediaPhoto(
                 media="https://i.ibb.co/6JWDXWbc/photo-2025-05-01-10-38-04-7499424743230013456.jpg",
                 caption=HELP_TXT.format(first=query.from_user.first_name),
-                parse_mode="html"
+                parse_mode=ParseMode.HTML
             ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
@@ -27,7 +27,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             media=InputMediaPhoto(
                 media="https://i.ibb.co/TD6V1bP0/photo-2025-05-01-10-38-06-7499424756114915352.jpg",
                 caption=ABOUT_TXT.format(first=query.from_user.first_name),
-                parse_mode="html"
+                parse_mode=ParseMode.HTML
             ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
@@ -40,7 +40,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             media=InputMediaPhoto(
                 media="https://i.ibb.co/SDL1s3bc/photo-2025-05-01-08-54-41-7499398097252909060.jpg",
                 caption=START_MSG.format(first=query.from_user.first_name),
-                parse_mode="html"
+                parse_mode=ParseMode.HTML
             ),
             reply_markup=InlineKeyboardMarkup([
                 [
