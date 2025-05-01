@@ -51,6 +51,8 @@ async def short_url(client: Client, message: Message, base64_string):
     except IndexError:
         pass
 
+
+
 @Bot.on_message(filters.command('start') & filters.private)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
@@ -63,7 +65,7 @@ async def start_command(client: Client, message: Message):
     ]
 
     await client.send_chat_action(message.chat.id, ChatAction.TYPING)
-    msg = await message.reply_text(welcome_text, parse_mode="html")
+    msg = await message.reply_text(welcome_text, parse_mode=ParseMode.HTML)
     await asyncio.sleep(0.5)
 
     await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode=ParseMode.HTML)
