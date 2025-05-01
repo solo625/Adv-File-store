@@ -352,10 +352,17 @@ async def add_premium_user_command(client, msg):
         # Call add_premium function
         expiration_time = await add_premium(user_id, time_value, time_unit)
 
-        # Notify the admin
-        await msg.reply_text(
-            f"✅ User `{user_id}` added as a premium user for {time_value} {time_unit}.\n"
-            f"Expiration Time: `{expiration_time}`"
+        # Notify the admin with an image and a close button
+        keyboard = InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("Close", callback_data="close")]
+            ]
+        )
+        await msg.reply_photo(
+            photo="https://example.com/success_image.jpg",  # Replace with your image URL
+            caption=f"✅ User `{user_id}` added as a premium user for {time_value} {time_unit}.\n"
+                    f"Expiration Time: `{expiration_time}`",
+            reply_markup=keyboard
         )
 
         # Notify the user
@@ -366,6 +373,7 @@ async def add_premium_user_command(client, msg):
                 f"You have received premium access for `{time_value} {time_unit}`.\n"
                 f"Expires on: `{expiration_time}`"
             ),
+            reply_markup=keyboard
         )
 
     except ValueError:
@@ -373,6 +381,37 @@ async def add_premium_user_command(client, msg):
     except Exception as e:
         await msg.reply_text(f"⚠️ An error occurred: `{str(e)}`")
 
+@Bot.on_callback_query()
+async def on_callback_query(client, callback_query):
+    if callback_query.data == "close":
+        # Close the message by deleting it
+        await callback_query.message.delete()
+        
+#=====================================================================================##
+
+# Command to remove premium user with image and close button
+@Bot.on_message(filters.command('remove_premium') & filters.private & admin)
+async def pre_remove_user(client: Client, msg: Message):
+    if len(msg.command) != 2:
+        await msg.reply_text("Usage: /remove_premium <user_id>")
+        return
+    try:
+        user_id = int(msg.command[1])
+        await remove_premium(user_id)
+
+        # Notify the admin with an image and a close button
+        keyboard = InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("Close", callback_data="close")]
+            ]
+        )
+        await msg.reply_photo(
+            photo="https://example.com/success_image.jpg",  # Replace with your image URL
+            caption=f"User `{user_id}` has been removed from premium.",
+            reply_markup=keyboard
+        )
+    except ValueError:
+        await msg.reply_text("User ID must be an integer or not available in database.")
 
 # Command to remove premium user
 @Bot.on_message(filters.command('remove_premium') & filters.private & admin)
