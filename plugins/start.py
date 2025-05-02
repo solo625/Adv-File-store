@@ -376,8 +376,8 @@ async def check_plan(client: Client, message: Message):
 
     keyboard = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton("Close", callback_data="close"),
-            InlineKeyboardButton("More Info", url=url)
+            InlineKeyboardButton("Bᴜʏ ᴘʀᴇᴍɪᴜᴍ", url=url),
+            InlineKeyboardButton("Cʟᴏsᴇ ✖", callback_data="close")
         ]]
     )
 
