@@ -382,11 +382,11 @@ async def check_plan(client: Client, message: Message):
     )
 
     caption = (
-        f"<b>Your Plan Details:</b>\n\n"
-        f"<b>Name:</b> {name}\n"
-        f"<b>Username:</b> {username}\n"
-        f"<b>User ID:</b> <code>{user_id}</code>\n\n"
-        f"<b>Status:</b>\n{status_message}"
+        f"<b><pre>𝗬𝗼𝘂𝗿 𝗣𝗹𝗮𝗻 𝗗𝗲𝘁𝗮𝗶𝗹𝘀 :<pre></b>\n"
+        f"<b><blockquote>Nᴀᴍᴇ :</b> {name}\n"
+        f"<b>Usᴇʀɴᴀᴍᴇ :</b> {username}\n"
+        f"<b>Usᴇʀ ɪᴅ :</b> <code>{user_id}</code>\n"
+        f"<b>Sᴛᴀᴛᴜs :</b>\n{status_message}<blockquote>"
     )
 
     await message.reply_photo(
