@@ -349,9 +349,9 @@ async def check_plan(client: Client, message: Message):
 
     # Welcome message and animation
     welcome_text = (
-        "<i><blockquote>"
-        "Wᴇʟᴄᴏᴍᴇ, ʙᴀʙʏ… ɪ’ᴠᴇ ʙᴇᴇɴ ᴄʀᴀᴠɪɴɢ ʏᴏᴜʀ ᴘʀᴇsᴇɴᴄᴇ ғᴇᴇʟs ᴘᴇʀғᴇᴄᴛ ɴᴏᴡ ᴛʜᴀᴛ ʏᴏᴜ’ʀᴇ ʜᴇʀᴇ."
-        "</blockquote></i>"
+        "<i><pre>"
+        "Fᴇᴛᴄʜɪɴɢ ᴜsᴇʀ ɪɴғᴏ"
+        "</pre></i>"
     )
     stickers = [
         "CAACAgUAAxkBAAEOXBhoCoKZ76jevKX-Vc5v5SZhCeQAAXMAAh4KAALJrhlVZygbxFWWTLw2BA"
@@ -361,7 +361,7 @@ async def check_plan(client: Client, message: Message):
     msg = await message.reply_text(welcome_text, parse_mode=ParseMode.HTML)
     await asyncio.sleep(0.5)
 
-    await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode=ParseMode.HTML)
+    await msg.edit_text("<b><i><pre>Dᴏɴᴇ</pre></i></b>", parse_mode=ParseMode.HTML)
     await asyncio.sleep(0.5)
     await msg.delete()
 
@@ -372,7 +372,7 @@ async def check_plan(client: Client, message: Message):
     status_message = await check_user_plan(user_id)
 
     image_url = "https://i.ibb.co/MxyCLGBf/photo-2025-01-16-11-21-46-7499433590862643216.jpg"
-    url = "https://example.com/terms"
+    url = "https://t.me/+FRmXFSlecDI5NGJl"
 
     keyboard = InlineKeyboardMarkup(
         [[
@@ -393,7 +393,8 @@ async def check_plan(client: Client, message: Message):
         photo=image_url,
         caption=caption,
         reply_markup=keyboard,
-        parse_mode=ParseMode.HTML
+        parse_mode=ParseMode.HTML, 
+        message_effect_id=5104841245755180586  # 🔥
     )
 
 #=====================================================================================##
