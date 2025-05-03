@@ -522,10 +522,11 @@ async def list_premium_users_command(client, message):
 
     # Send message with image and button
     await message.reply_photo(
-        photo="https://example.com/your_image.jpg",  # Replace with your image URL
+        photo="https://i.ibb.co/V0kXYvxb/photo-2025-05-03-13-16-24-7500207702883172380.jpg",  # Replace with your image URL
         caption="\n\n".join(premium_user_list),
         reply_markup=keyboard,
-        parse_mode=ParseMode.HTML
+        parse_mode=ParseMode.HTML, 
+        message_effect_id=5104841245755180586  # 🔥
     )
 
 @Bot.on_callback_query(filters.regex("close_premium_list"))
