@@ -399,18 +399,11 @@ async def check_plan(client: Client, message: Message):
 async def add_premium_user_command(client, msg):
     if len(msg.command) != 4:
         await msg.reply_text(
-            "Usage: /addpaid <user_id> <time_value> <time_unit>\n\n"
-            "Time Units:\n"
-            "s - seconds\n"
-            "m - minutes\n"
-            "h - hours\n"
-            "d - days\n"
-            "y - years\n\n"
-            "Examples:\n"
-            "/addpremium 123456789 30 m → 30 minutes\n"
+            "<blockquote><b>Usᴇᴀɢᴇ: /addpaid <user_id> <time_value> <time_unit></b><blockquote>\n"
+            "<blockquote>/addpremium 123456789 30 m → 30 minutes\n"
             "/addpremium 123456789 2 h → 2 hours\n"
             "/addpremium 123456789 1 d → 1 day\n"
-            "/addpremium 123456789 1 y → 1 year"
+            "/addpremium 123456789 1 y → 1 year</blockquote>"
         )
         return
 
@@ -425,7 +418,7 @@ async def add_premium_user_command(client, msg):
         # Notify the admin with an image and a close button
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Close", callback_data="close2")]
+                [InlineKeyboardButton("Cʟᴏsᴇ ✖", callback_data="close2")]
             ]
         )
         await msg.reply_photo(
