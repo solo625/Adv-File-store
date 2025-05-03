@@ -45,7 +45,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             ),
             reply_markup=InlineKeyboardMarkup([
                 [
-                    InlineKeyboardButton("Mᴏʀᴇ ᴄʜᴀɴɴᴇʟs", url="https://t.me/Cultured_Weekends")
+                    InlineKeyboardButton("Pʀᴇᴍɪᴜᴍ", callback_data="premium")
                 ],
                 [
                     InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="about"),
