@@ -459,29 +459,6 @@ async def on_callback_query(client, callback_query):
         
 #=====================================================================================##
 
-# Command to remove premium user with image and close button
-@Bot.on_message(filters.command('remove_premium') & filters.private & admin)
-async def pre_remove_user(client: Client, msg: Message):
-    if len(msg.command) != 2:
-        await msg.reply_text("Usage: /remove_premium <user_id>")
-        return
-    try:
-        user_id = int(msg.command[1])
-        await remove_premium(user_id)
-
-        # Notify the admin with an image and a close button
-        keyboard = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("Close", callback_data="close")]
-            ]
-        )
-        await msg.reply_photo(
-            photo="https://example.com/success_image.jpg",  # Replace with your image URL
-            caption=f"User `{user_id}` has been removed from premium.",
-            reply_markup=keyboard
-        )
-    except ValueError:
-        await msg.reply_text("User ID must be an integer or not available in database.")
 
 #=====================================================================================##
 
@@ -489,14 +466,14 @@ async def pre_remove_user(client: Client, msg: Message):
 @Bot.on_message(filters.command('remove_premium') & filters.private & admin)
 async def pre_remove_user(client: Client, msg: Message):
     if len(msg.command) != 2:
-        await msg.reply_text("useage: /remove_premium user_id ")
+        await msg.reply_text("<pre>Usᴇᴀɢᴇ: /remove_premium user_id</pre>")
         return
     try:
         user_id = int(msg.command[1])
         await remove_premium(user_id)
-        await msg.reply_text(f"User {user_id} has been removed.")
+        await msg.reply_text(f"<blockquote>Usᴇʀ {user_id} ʜᴀs ʙᴇᴇɴ ʀᴇᴍᴏᴠᴇᴅ.</blockquote>")
     except ValueError:
-        await msg.reply_text("user_id must be an integer or not available in database.")
+        await msg.reply_text("<blockquote>Usᴇʀ_ɪᴅ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ ᴏʀ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴅᴀᴛᴀʙᴀsᴇ.</blockquote>")
 
 #=====================================================================================##
 
@@ -531,10 +508,10 @@ async def list_premium_users_command(client, message):
             expiry_info = f"{days}d {hours}h {minutes}m {seconds}s left"
 
             premium_user_list.append(
-                f"UserID: <code>{user_id}</code>\n"
-                f"User: @{username}\n"
-                f"Name: {mention}\n"
-                f"Expiry: {expiry_info}"
+                f"<blockquote>Usᴇʀɪᴅ : <code>{user_id}</code>\n"
+                f"Usᴇʀ : @{username}\n"
+                f"Nᴀᴍᴇ : {mention}\n"
+                f"Exᴘɪʀʏ : {expiry_info}</blockquote>"
             )
         except Exception as e:
             premium_user_list.append(
@@ -543,7 +520,7 @@ async def list_premium_users_command(client, message):
             )
 
     if len(premium_user_list) == 1:
-        await message.reply_text("I found 0 active premium users in my DB")
+        await message.reply_text("<pre>I ғᴏᴜɴᴅ 0 ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs ɪɴ ᴍʏ ᴅʙ</pre>")
         return
 
     # Inline button to close the message
@@ -556,7 +533,7 @@ async def list_premium_users_command(client, message):
         photo="https://example.com/your_image.jpg",  # Replace with your image URL
         caption="\n\n".join(premium_user_list),
         reply_markup=keyboard,
-        parse_mode="html"
+        parse_mode=ParseMode.HTML
     )
 
 @Bot.on_callback_query(filters.regex("close_premium_list"))
