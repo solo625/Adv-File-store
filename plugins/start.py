@@ -430,11 +430,12 @@ async def add_premium_user_command(client, msg):
             chat_id=user_id,
             photo="https://i.ibb.co/QFhKtfQH/photo-2025-05-03-13-06-15-7500205091543056408.jpg",
             caption=(
-                f"<pre>🎉 Pʀᴇᴍɪᴜᴍ ᴀᴄᴛɪᴠᴀᴛᴇᴅ!</pre>\n\n"
-                f"<blockquote>Yᴏᴜ ʜᴀᴠᴇ ʀᴇᴄᴇɪᴠᴇᴅ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇss ғᴏʀ `{time_value} {time_unit}`.</blockquote>\n"
-                f"<blockquote>Exᴘɪʀᴇs ᴏɴ : `{expiration_time}`</blockquote>"
+                f"<pre>🎉 Pʀᴇᴍɪᴜᴍ ᴀᴄᴛɪᴠᴀᴛᴇᴅ!</pre>\n"
+                f"<blockquote>Yᴏᴜ ʜᴀᴠᴇ ʀᴇᴄᴇɪᴠᴇᴅ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇss ғᴏʀ <b>{time_value} {time_unit}.</b></blockquote>\n"
+                f"<blockquote>Exᴘɪʀᴇs ᴏɴ : <b>{expiration_time}</blockquote></b>"
             ),
-            reply_markup=keyboard
+            reply_markup=keyboard,
+            message_effect_id=5104841245755180586  # 🔥
         )
 
     except ValueError:
