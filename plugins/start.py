@@ -415,23 +415,21 @@ async def add_premium_user_command(client, msg):
         # Call add_premium function
         expiration_time = await add_premium(user_id, time_value, time_unit)
 
-        # Notify the admin with an image and a close button
+        # Notify the admin with plain text and close button
         keyboard = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("Cʟᴏsᴇ ✖", callback_data="close2")]
-            ]
+            [[InlineKeyboardButton("Cʟᴏsᴇ ✖", callback_data="close2")]]
         )
-        await msg.reply_photo(
-            photo="https://i.ibb.co/fmkr6qr/photo-2025-05-03-12-40-14-7500198387099107344.jpg",  # Replace with your image URL
-            caption=f"✅ User `{user_id}` added as a premium user for {time_value} {time_unit}.\n"
-                    f"Expiration Time: `{expiration_time}`",
+        await msg.reply_text(
+            f"✅ User `{user_id}` added as a premium user for {time_value} {time_unit}.\n"
+            f"Expiration Time: `{expiration_time}`",
             reply_markup=keyboard
         )
 
-        # Notify the user
-        await client.send_message(
+        # Notify the user with image and button
+        await client.send_photo(
             chat_id=user_id,
-            text=(
+            photo="https://i.ibb.co/fmkr6qr/photo-2025-05-03-12-40-14-7500198387099107344.jpg",
+            caption=(
                 f"🎉 Premium Activated!\n\n"
                 f"You have received premium access for `{time_value} {time_unit}`.\n"
                 f"Expires on: `{expiration_time}`"
@@ -444,10 +442,10 @@ async def add_premium_user_command(client, msg):
     except Exception as e:
         await msg.reply_text(f"⚠️ An error occurred: `{str(e)}`")
 
+
 @Bot.on_callback_query()
 async def on_callback_query(client, callback_query):
     if callback_query.data == "close2":
-        # Close the message by deleting it
         await callback_query.message.delete()
         
 #=====================================================================================##
