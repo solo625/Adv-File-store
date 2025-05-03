@@ -66,10 +66,10 @@ async def start_command(client: Client, message: Message):
 
     await client.send_chat_action(message.chat.id, ChatAction.TYPING)
     msg = await message.reply_text(welcome_text, parse_mode=ParseMode.HTML)
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.1)
 
     await msg.edit_text("<b><i><pre>Sᴛᴀʀᴛɪɴɢ...</pre></i></b>", parse_mode=ParseMode.HTML)
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.1)
     await msg.delete()
 
     await client.send_chat_action(message.chat.id, ChatAction.CHOOSE_STICKER)
@@ -80,9 +80,9 @@ async def start_command(client: Client, message: Message):
     if user_id in banned_users:
         return await message.reply_text(
             "<b>⛔️ You are Bᴀɴɴᴇᴅ from using this bot.</b>\n\n"
-            "<i>Contact support if you think this is a mistake.</i>",
+            "<i>Cᴏɴᴛᴀᴄᴛ sᴜᴘᴘᴏʀᴛ ɪғ ʏᴏᴜ ᴛʜɪɴᴋ ᴛʜɪs ɪs ᴀ ᴍɪsᴛᴀᴋᴇ.</i>",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Contact Support", url=BAN_SUPPORT)]]
+                [[InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ sᴜᴘᴘᴏʀᴛ", url=BAN_SUPPORT)]]
             )
         )
 
