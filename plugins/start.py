@@ -503,47 +503,33 @@ async def pre_remove_user(client: Client, msg: Message):
 # Command to list active premium users
 @Bot.on_message(filters.command('premium_users') & filters.private & admin)
 async def list_premium_users_command(client, message):
-    # Define IST timezone
     ist = timezone("Asia/Kolkata")
-
-    # Retrieve all users from the collection
     premium_users_cursor = collection.find({})
-    premium_user_list = ['Active Premium Users in database:']
-    current_time = datetime.now(ist)  # Get current time in IST
+    premium_user_list = ['<b>Active Premium Users in Database:</b>']
+    current_time = datetime.now(ist)
 
-    # Use async for to iterate over the async cursor
     async for user in premium_users_cursor:
         user_id = user["user_id"]
         expiration_timestamp = user["expiration_timestamp"]
 
         try:
-            # Convert expiration_timestamp to a timezone-aware datetime object in IST
             expiration_time = datetime.fromisoformat(expiration_timestamp).astimezone(ist)
-
-            # Calculate remaining time
             remaining_time = expiration_time - current_time
 
             if remaining_time.total_seconds() <= 0:
-                # Remove expired users from the database
                 await collection.delete_one({"user_id": user_id})
-                continue  # Skip to the next user if this one is expired
+                continue
 
-            # If not expired, retrieve user info
             user_info = await client.get_users(user_id)
             username = user_info.username if user_info.username else "No Username"
-            first_name = user_info.first_name
-            mention=user_info.mention
+            mention = user_info.mention
 
-            # Calculate days, hours, minutes, seconds left
-            days, hours, minutes, seconds = (
-                remaining_time.days,
-                remaining_time.seconds // 3600,
-                (remaining_time.seconds // 60) % 60,
-                remaining_time.seconds % 60,
-            )
+            days = remaining_time.days
+            hours = remaining_time.seconds // 3600
+            minutes = (remaining_time.seconds // 60) % 60
+            seconds = remaining_time.seconds % 60
             expiry_info = f"{days}d {hours}h {minutes}m {seconds}s left"
 
-            # Add user details to the list
             premium_user_list.append(
                 f"UserID: <code>{user_id}</code>\n"
                 f"User: @{username}\n"
@@ -556,10 +542,27 @@ async def list_premium_users_command(client, message):
                 f"Error: Unable to fetch user details ({str(e)})"
             )
 
-    if len(premium_user_list) == 1:  # No active users found
+    if len(premium_user_list) == 1:
         await message.reply_text("I found 0 active premium users in my DB")
-    else:
-        await message.reply_text("\n\n".join(premium_user_list), parse_mode=None)
+        return
+
+    # Inline button to close the message
+    keyboard = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Cʟᴏsᴇ ✖", callback_data="close_premium_list")]]
+    )
+
+    # Send message with image and button
+    await message.reply_photo(
+        photo="https://example.com/your_image.jpg",  # Replace with your image URL
+        caption="\n\n".join(premium_user_list),
+        reply_markup=keyboard,
+        parse_mode="html"
+    )
+
+@Bot.on_callback_query(filters.regex("close_premium_list"))
+async def close_callback(client, callback_query):
+    await callback_query.message.delete()
+    await callback_query.answer()
 
 
 #=====================================================================================##
