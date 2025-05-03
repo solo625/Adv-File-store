@@ -428,11 +428,11 @@ async def add_premium_user_command(client, msg):
         # Notify the user with image and button
         await client.send_photo(
             chat_id=user_id,
-            photo="https://i.ibb.co/fmkr6qr/photo-2025-05-03-12-40-14-7500198387099107344.jpg",
+            photo="https://i.ibb.co/QFhKtfQH/photo-2025-05-03-13-06-15-7500205091543056408.jpg",
             caption=(
-                f"🎉 Premium Activated!\n\n"
-                f"You have received premium access for `{time_value} {time_unit}`.\n"
-                f"Expires on: `{expiration_time}`"
+                f"<pre>🎉 Pʀᴇᴍɪᴜᴍ ᴀᴄᴛɪᴠᴀᴛᴇᴅ!</pre>\n\n"
+                f"<blockquote>Yᴏᴜ ʜᴀᴠᴇ ʀᴇᴄᴇɪᴠᴇᴅ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇss ғᴏʀ `{time_value} {time_unit}`.</blockquote>\n"
+                f"<blockquote>Exᴘɪʀᴇs ᴏɴ : `{expiration_time}`</blockquote>"
             ),
             reply_markup=keyboard
         )
