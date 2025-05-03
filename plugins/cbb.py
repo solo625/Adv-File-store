@@ -39,7 +39,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "start":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/SDL1s3bc/photo-2025-05-01-08-54-41-7499398097252909060.jpg",
+                media="https://i.ibb.co/m5CmBgZ8/photo-2025-05-01-08-09-59-7499386582445588496.jpg",
                 caption=START_MSG.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
