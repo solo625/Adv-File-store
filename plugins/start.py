@@ -422,7 +422,7 @@ async def add_premium_user_command(client, msg):
             ]
         )
         await msg.reply_photo(
-            photo="https://example.com/success_image.jpg",  # Replace with your image URL
+            photo="https://i.ibb.co/fmkr6qr/photo-2025-05-03-12-40-14-7500198387099107344.jpg",  # Replace with your image URL
             caption=f"✅ User `{user_id}` added as a premium user for {time_value} {time_unit}.\n"
                     f"Expiration Time: `{expiration_time}`",
             reply_markup=keyboard
