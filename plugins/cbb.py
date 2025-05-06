@@ -13,7 +13,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "help":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/dwmHC029/photo-2025-05-03-12-22-24-7500193791484100632.jpg",
+                media="https://i.ibb.co/zHrfvVTY/photo-2025-05-06-11-09-22-7501288226460532760.jpg",
                 caption=HELP_TXT.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
@@ -26,7 +26,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "about":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/8nt0LhjS/photo-2025-05-03-12-22-24-7500193804369002524.jpg",
+                media="https://i.ibb.co/d4czQKY0/photo-2025-05-06-11-09-51-7501288381079355396.jpg",
                 caption=ABOUT_TXT.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
@@ -39,13 +39,13 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "start":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/m5CmBgZ8/photo-2025-05-01-08-09-59-7499386582445588496.jpg",
+                media="https://i.ibb.co/1tm9L912/photo-2025-05-05-12-34-06-7500938994079760412.jpg",
                 caption=START_MSG.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
             reply_markup=InlineKeyboardMarkup([
                 [
-                    InlineKeyboardButton("Pʀᴇᴍɪᴜᴍ", callback_data="premium")
+                    InlineKeyboardButton("Main Channel", url="https://t.me/+gE8Utdmvn4kzZjE1")
                 ],
                 [
                     InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="about"),
