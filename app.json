@@ -6,8 +6,8 @@
     "file",
     "sharing"
   ],
-  "repository": "https://github.com/Codeflix-Bots/FileStore",
-  "logo": "https://graph.org/file/6ceef6a98b82b0e0e2f03.jpg",
+  "repository": "https://github.com/solo625/Adv-File-store",
+  "logo": "https://i.ibb.co/Vct3VvNN/photo-2025-03-31-12-32-54-7499550710325837840.jpg",
   "env": {
     "TG_BOT_TOKEN": {
       "description": "Your Bot token, Get it from @Botfather",
@@ -15,39 +15,39 @@
     },
     "OWNER_ID": {
       "description": "An integer of consisting of your owner ID",
-      "value": "6497757690"
+      "value": "7009595359"
     },
     "APP_ID":{
-      "description": "your app id, take it from my.telegram.org",
-      "value": ""
+      "description": "your app id, taken",
+      "value": "20714788"
     },
     "DATABASE_URL": {
       "description": "Paste your mongo db url",
-      "value": "url"
+      "value": "mongodb+srv://filestore:BFsHO5KRZ7XJqYGk@cluster0.v21xlgp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     },
     "DATABASE_NAME":{
-      "description": "Enter your DATABASE_NAME ",
-      "value": "Cluster0"
+      "description": "Enter your database name",
+      "value": "filestore"
     },
     "API_HASH":{
       "description": "your api hash, take it from my.telegram.org",
-      "value": ""
+      "value": "25103f6394df6328a3ac776bf83f0e26"
     },
     "CHANNEL_ID":{
       "description": "make a channel (database channel), then make the bot as admin in channel, and it's id",
-      "value": "-1001995978690"
+      "value": "-1002650912983"
     },
     "FORCE_SUB_CHANNEL":{
       "description": "id of the channel or group, if you want enable force sub feature else put 0",
-      "value": "-1001473043276"
+      "value": "0"
     },
     "FORCE_SUB_CHANNEL2":{
       "description": "id of the channel or group, if you want enable force sub feature else put 0",
-      "value": "-1001495022147"
+      "value": "0"
     },
     "ADMINS": {
       "description": "A space separated list of user_ids of Admins, they can only create links",
-      "value": "5115691197 6273945163 6103092779 5231212075",
+      "value": "7009595359 1416841137",
       "required": false
     },
     "PROTECT_CONTENT": {
