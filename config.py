@@ -3,46 +3,55 @@ from os import environ,getenv
 import logging
 from logging.handlers import RotatingFileHandler
 
-#rohit_1888 on Tg
 #--------------------------------------------
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7912944940:AAEI_WaOeh1Ys9DAYagFMDlm94PUJuc-SPc")
-APP_ID = int(os.environ.get("APP_ID", "28744454")) #Your API ID from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "debd37cef0ad1a1ce45d0be8e8c3c5e7") #Your API Hash from my.telegram.org
+TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
+APP_ID = int(os.environ.get("APP_ID", "20714788")) #Your API ID from my.telegram.org
+API_HASH = os.environ.get("API_HASH", "25103f6394df6328a3ac776bf83f0e26") #Your API Hash from my.telegram.org
 #--------------------------------------------
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002328602631")) #Your db channel Id
-OWNER = os.environ.get("OWNER", "AckerManFreak") # Owner username without @
-OWNER_ID = int(os.environ.get("OWNER_ID", "6266529037")) # Owner id
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002650912983")) #Your db channel Id
+OWNER = os.environ.get("OWNER", "otakusolo") # Owner username without @
+OWNER_ID = int(os.environ.get("OWNER_ID", "7009595359")) # Owner id
 #--------------------------------------------
 PORT = os.environ.get("PORT", "8001")
 #--------------------------------------------
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://jeffysamaweekends:jeffysamaweekends@cluster0.ulyfw.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "HanimeBaby")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://filestore:BFsHO5KRZ7XJqYGk@cluster0.v21xlgp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_NAME = os.environ.get("DATABASE_NAME", "filestore")
 #--------------------------------------------
 FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "0"))  # 0 means no expiry
-BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/RexySama")
+BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/otakusolo")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "200"))
 #--------------------------------------------
-START_PIC = os.environ.get("START_PIC", "https://i.ibb.co/b5Dpj4Jg/photo-2025-05-03-09-45-10-7500153268467662868.jpg")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://i.ibb.co/MxyCLGBf/photo-2025-01-16-11-21-46-7499433590862643216.jpg")
+START_PIC = os.environ.get("START_PIC", "https://i.ibb.co/1tm9L912/photo-2025-05-05-12-34-06-7500938994079760412.jpg")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://i.ibb.co/Wvd71Cj2/photo-2025-05-06-12-32-12-7501309572447993884.jpg")
 
 #--------------------------------------------
-SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "Shortxlinks.com")
-SHORTLINK_API = os.environ.get("SHORTLINK_API", "bea2b83467261cec3b811d76a9bd84533234219a")
-TUT_VID = os.environ.get("TUT_VID","https://t.me/verify_linkk")
+SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "tnshort.net")
+SHORTLINK_API = os.environ.get("SHORTLINK_API", "477f2cdf1b113fca45b9167fc0370f55c37dfc76")
+TUT_VID = os.environ.get("TUT_VID","https://t.me/how_to_download_tamil/3")
 SHORT_MSG = "<b><pre>👀 Hᴇʏ ʙʀᴏ/sɪs ,</pre>\n<blockquote>‼️ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ʟɪɴᴋ ‼️</blockquote>\n<blockquote>⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ ⌯</blockquote></b>"
 
-SHORTENER_PIC = os.environ.get("SHORTENER_PIC", "https://i.ibb.co/m5CmBgZ8/photo-2025-05-01-08-09-59-7499386582445588496.jpg")
+SHORTENER_PIC = os.environ.get("SHORTENER_PIC", "https://i.ibb.co/1tm9L912/photo-2025-05-05-12-34-06-7500938994079760412.jpg")
 #--------------------------------------------
 
 #--------------------------------------------
-HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏᴛ ᴡᴏʀᴋ ғᴏʀ @Nova_Flix\n\n❏ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs\n├/start : sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n├/about : ᴏᴜʀ Iɴғᴏʀᴍᴀᴛɪᴏɴ\n└/help : ʜᴇʟᴘ ʀᴇʟᴀᴛᴇᴅ ʙᴏᴛ\n\n sɪᴍᴘʟʏ ᴄʟɪᴄᴋ ᴏɴ ʟɪɴᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ ᴊᴏɪɴ ʙᴏᴛʜ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴛʜᴀᴛs ɪᴛ.....!\n\n ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ <a href=https://t.me/cosmic_freak>sᴜʙᴀʀᴜ</a></blockquote></b>"
-ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/cosmic_freak>Yato</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/otakuflix_network>ᴏᴛᴀᴋᴜғʟɪx ɴᴇᴛᴡᴏʀᴋ</a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/anime_cruise_netflix>ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ</a>\n◈ sᴇʀɪᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/webseries_flix>ᴡᴇʙsᴇʀɪᴇs ғʟɪx</a>\n◈ ᴀᴅᴜʟᴛ ᴍᴀɴʜᴡᴀ : <a href=https://t.me/pornhwa_flix>ᴘᴏʀɴʜᴡᴀs</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/cosmic_freak>subaru</a></blockquote></b>"
+HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏᴛ ᴡᴏʀᴋ ғᴏʀ @otakusolo\n\n❏ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs\n├ /start : sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n├ /about : ᴏᴜʀ Iɴғᴏʀᴍᴀᴛɪᴏɴ\n└ /help : ʜᴇʟᴘ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ʙᴏᴛ</blockquote></b>"
+ABOUT_TXT = """<b><blockquote>
+👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/otakusolo'>ᴏᴡɴᴇʀ</a>  
+📚 ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>  
+🐍 ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 3</a>  
+🗄️ ᴅᴀᴛᴀʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a>  
+☁️ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://heroku.com'>ʜᴇʀᴏᴋᴜ</a>  
+📦 ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ2.7.1 [sᴛᴀʙʟᴇ]  
+💬 sᴜᴘᴘᴏʀᴛ : <a href='https://t.me/srkassistant'>@support</a>
+</blockquote></b>"""
+
+
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ  {first}</blockquote>\n<b><blockquote>ʟᴏᴠᴇ ʜᴇɴᴛᴀɪ & ᴊᴀᴠ? ɪ ᴀᴍ ᴍᴀᴅᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ғɪɴᴅ ᴡʜᴀᴛ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ.</blockquote></b>")
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Aʀᴀ Aʀᴀ  {first}</b></blockquote>\n<b><blockquote>ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs</b>")
+START_MSG = os.environ.get("START_MESSAGE", "oʀᴀ oʀᴀ.... ɪ ᴀᴍ ᴍᴀᴅᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ғɪɴᴅ ᴡʜᴀᴛ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ....")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "oʀᴀ oʀa.....ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.....")
 
 CMD_TXT = """<blockquote><b>» 𝗔𝗗𝗠𝗜𝗡𝗦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗</b></blockquote>
 <b><blockquote expandable>›› /dlt_time :</b> sᴇᴛ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛɪᴍᴇ
@@ -66,7 +75,7 @@ CMD_TXT = """<blockquote><b>» 𝗔𝗗𝗠𝗜𝗡𝗦 𝗖𝗢𝗠𝗠𝗔𝗡
 <b>›› /count :</b> ᴄᴏᴜɴᴛ</blockquote>
 """
 #--------------------------------------------
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "<b>• ʙʏ @Cultured_Weekends</b>") #set your Custom Caption here, Keep None for Disable Custom Caption
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "<b>• ʙʏ @otakusolo</b>") #set your Custom Caption here, Keep None for Disable Custom Caption
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False #set True if you want to prevent users from forwarding files from bot
 #--------------------------------------------
 #Set true if you want Disable your Channel Posts Share button
@@ -77,22 +86,22 @@ USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘ
 
 #==========================(BUY PREMIUM)====================#
 
-OWNER_TAG = os.environ.get("OWNER_TAG", "Weekends_Feedback_bot")
-UPI_ID = os.environ.get("UPI_ID", "Weekends_Feedback_bot")
-QR_PIC = os.environ.get("QR_PIC", "https://i.ibb.co/21yW232g/photo-2025-05-01-09-28-01-7499406687187501064.jpg")
-SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"https://t.me/+FRmXFSlecDI5NGJl")
+#OWNER_TAG = os.environ.get("OWNER_TAG", "Weekends_Feedback_bot")
+#UPI_ID = os.environ.get("UPI_ID", "Weekends_Feedback_bot")
+#QR_PIC = os.environ.get("QR_PIC", "https://i.ibb.co/21yW232g/photo-2025-05-01-09-28-01-7499406687187501064.jpg")
+#SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"https://t.me/+FRmXFSlecDI5NGJl")
 #--------------------------------------------
 #Time and its price
 #7 Days
-PRICE1 = os.environ.get("PRICE1", "0 rs")
+#PRICE1 = os.environ.get("PRICE1", "0 rs")
 #1 Month
-PRICE2 = os.environ.get("PRICE2", "60 rs")
+#PRICE2 = os.environ.get("PRICE2", "60 rs")
 #3 Month
-PRICE3 = os.environ.get("PRICE3", "150 rs")
+#PRICE3 = os.environ.get("PRICE3", "150 rs")
 #6 Month
-PRICE4 = os.environ.get("PRICE4", "280 rs")
+#PRICE4 = os.environ.get("PRICE4", "280 rs")
 #1 Year
-PRICE5 = os.environ.get("PRICE5", "550 rs")
+#PRICE5 = os.environ.get("PRICE5", "550 rs")
 
 #===================(END)========================#
 
