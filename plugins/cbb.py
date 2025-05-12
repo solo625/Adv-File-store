@@ -13,7 +13,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "help":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/zHrfvVTY/photo-2025-05-06-11-09-22-7501288226460532760.jpg",
+                media="https://i.ibb.co/5XLDTDzH/photo-2025-05-12-07-18-35-7503455282274500612.jpg",
                 caption=HELP_TXT.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
@@ -26,7 +26,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif data == "about":
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media="https://i.ibb.co/d4czQKY0/photo-2025-05-06-11-09-51-7501288381079355396.jpg",
+                media="https://i.ibb.co/PvtY6rLH/photo-2025-05-12-07-18-19-7503455209260056596.jpg",
                 caption=ABOUT_TXT.format(first=query.from_user.first_name),
                 parse_mode=ParseMode.HTML
             ),
