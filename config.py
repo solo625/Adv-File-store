@@ -27,9 +27,9 @@ START_PIC = os.environ.get("START_PIC", "https://i.ibb.co/1tm9L912/photo-2025-05
 FORCE_PIC = os.environ.get("FORCE_PIC", "https://i.ibb.co/Wvd71Cj2/photo-2025-05-06-12-32-12-7501309572447993884.jpg")
 
 #--------------------------------------------
-SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "tnshort.net")
-SHORTLINK_API = os.environ.get("SHORTLINK_API", "477f2cdf1b113fca45b9167fc0370f55c37dfc76")
-TUT_VID = os.environ.get("TUT_VID","https://t.me/how_to_download_tamil/3")
+SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "")
+SHORTLINK_API = os.environ.get("SHORTLINK_API", "")
+TUT_VID = os.environ.get("TUT_VID","")
 SHORT_MSG = "<b><pre>👀 Hᴇʏ ʙʀᴏ/sɪs ,</pre>\n<blockquote>‼️ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ʟɪɴᴋ ‼️</blockquote>\n<blockquote>⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ ⌯</blockquote></b>"
 
 SHORTENER_PIC = os.environ.get("SHORTENER_PIC", "https://i.ibb.co/1tm9L912/photo-2025-05-05-12-34-06-7500938994079760412.jpg")
@@ -50,8 +50,8 @@ ABOUT_TXT = """<b><blockquote>
 
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "oʀᴀ oʀᴀ.... ɪ ᴀᴍ ᴍᴀᴅᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ғɪɴᴅ ᴡʜᴀᴛ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ....")
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "oʀᴀ oʀa.....ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.....")
+START_MSG = os.environ.get("START_MESSAGE", "𝑴𝒐𝒔𝒉𝒊 𝑴𝒐𝒔𝒉𝒊.... ɪ ᴀᴍ ᴍᴀᴅᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ғɪɴᴅ ᴡʜᴀᴛ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ....")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "𝑴𝒐𝒔𝒉𝒊 𝑴𝒐𝒔𝒉𝒊.....ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ sᴜʙsᴄʀɪʙᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.....")
 
 CMD_TXT = """<blockquote><b>» 𝗔𝗗𝗠𝗜𝗡𝗦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗</b></blockquote>
 <b><blockquote expandable>›› /dlt_time :</b> sᴇᴛ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛɪᴍᴇ
@@ -82,7 +82,7 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" e
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 #--------------------------------------------
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘᴀɪ!!"
+USER_REPLY_TEXT = "ɪᴅᴏɪᴛ ! 𝒚𝒐𝒖 𝒂𝒓𝒆 𝒏𝒐𝒕 𝒎𝒚 𝒄𝒉𝒊𝒆𝒇!!"
 
 #==========================(BUY PREMIUM)====================#
 
